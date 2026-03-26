@@ -1,0 +1,246 @@
+/* =========================================
+   GLOBAL
+========================================= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #1f1c2c, #0f0c29);
+  color: white;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  font-size: 22px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   NAV BUTTON
+========================================= */
+.nav-btn {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #00f5ff, #0088ff);
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,245,255,0.4);
+}
+
+.nav-btn:hover {
+  background: linear-gradient(135deg, #ff4ecd, #ff00aa);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255,0,170,0.6);
+}
+
+/* =========================================
+   MAIN APP
+========================================= */
+.app {
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   UPLOAD SECTION
+========================================= */
+.upload-section {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.upload-section input {
+  color: white;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #00f5ff, #0088ff);
+  color: black;
+  cursor: pointer;
+  margin-left: 12px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,245,255,0.4);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff4ecd, #ff00aa);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255,0,170,0.6);
+}
+
+/* =========================================
+   CHAT CONTAINER
+========================================= */
+.chat-container {
+  flex: 1;
+  background: rgba(255,255,255,0.04);
+  border-radius: 20px;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Custom Scrollbar */
+.chat-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00f5ff, #ff4ecd);
+  border-radius: 10px;
+}
+
+/* =========================================
+   CHAT MESSAGES
+========================================= */
+.message {
+  padding: 12px 18px;
+  border-radius: 20px;
+  margin: 10px 0;
+  max-width: 70%;
+  animation: fadeIn 0.3s ease-in-out;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.message.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #00f5ff, #0088ff);
+  color: black;
+  box-shadow: 0 0 15px rgba(0,245,255,0.4);
+}
+
+.message.bot {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* =========================================
+   INPUT SECTION
+========================================= */
+.input-container {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.input-container textarea {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 14px;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+.send-btn {
+  margin-left: 12px;
+}
+
+/* =========================================
+   TYPING INDICATOR
+========================================= */
+.typing {
+  font-style: italic;
+  color: #ff4ecd;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+/* =========================================
+   MICROPHONE BUTTON
+========================================= */
+.mic-btn {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  border: none;
+  padding: 10px 14px;
+  margin-left: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(255,87,34,0.4);
+}
+
+.mic-btn:hover {
+  transform: scale(1.1);
+}
+
+.mic-btn.listening {
+  background: red;
+  animation: pulse 1s infinite;
+  box-shadow: 0 0 20px red;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px red; }
+  50% { transform: scale(1.2); box-shadow: 0 0 25px red; }
+  100% { transform: scale(1); box-shadow: 0 0 10px red; }
+}
+
+/* =========================================
+   FADE IN ANIMATION
+========================================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sound-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: white;
+  transition: 0.3s ease;
+}
+
+.sound-btn:hover {
+  transform: scale(1.1);
+}
