@@ -15,11 +15,11 @@ app = FastAPI(
 )
 
 # CORS configuration
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://voicedocai-new.onrender.com",
-        "https://your-vercel-project.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
