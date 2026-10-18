@@ -1,4 +1,3 @@
-
 fastapi
 uvicorn
 pydantic
@@ -7,6 +6,8 @@ python-dotenv
 
 numpy
 pandas
+openpyxl
+xlrd
 matplotlib
 seaborn
 scipy
@@ -14,12 +15,17 @@ scikit-learn
 
 sentence-transformers
 faiss-cpu
-
 langchain-core
 langchain-text-splitters
 langchain-community
 langchain-ollama
 ollama
+
+torch
+openai-whisper
+
+gTTS
+requests
 
 pypdf
 python-docx
