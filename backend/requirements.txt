@@ -9,6 +9,7 @@ pandas
 sentence-transformers
 faiss-cpu
 langchain-text-splitters
+langchain-community
 
 ollama
 
