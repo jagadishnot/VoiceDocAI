@@ -57,7 +57,7 @@ export default function ExcelAnalyze() {
   const downloadZIP = async () => {
     try {
       const res = await API.get("/excel/download-zip");
-      window.open(`http://127.0.0.1:8000${res.data.url}`);
+      window.open(`${API.defaults.baseURL}${res.data.url}`);
     } catch {
       setStatus("error");
       setStatusMsg("❌ ZIP download failed");
@@ -67,7 +67,7 @@ export default function ExcelAnalyze() {
   const downloadPDF = async () => {
     try {
       const res = await API.get("/excel/download-pdf");
-      window.open(`http://127.0.0.1:8000${res.data.url}`);
+      window.open(`${API.defaults.baseURL}${res.data.url}`);
     } catch {
       setStatus("error");
       setStatusMsg("❌ PDF download failed");
@@ -146,7 +146,7 @@ export default function ExcelAnalyze() {
               {charts.map((c, i) => (
                 <div key={i} className="chart-card">
                   <img
-                    src={`http://127.0.0.1:8000${c}`}
+                    src={`${API.defaults.baseURL}${c}`}
                     alt={`chart-${i}`}
                     className="chart-img"
                   />
