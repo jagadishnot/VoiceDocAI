@@ -2,24 +2,25 @@
 fastapi
 uvicorn
 pydantic
+python-multipart
+python-dotenv
 
 numpy
 pandas
 matplotlib
+seaborn
 scipy
 scikit-learn
 
 sentence-transformers
 faiss-cpu
+
 langchain-core
 langchain-text-splitters
 langchain-community
 langchain-ollama
-
 ollama
 
 pypdf
 python-docx
 reportlab
-python-multipart
-python-dotenv
